@@ -24,6 +24,7 @@ export const singin = async(req, res)=>{
         }
         const passwordVerified = bcryptjs.compareSync(password.toString(), validUser.password);
         if(!passwordVerified){
+            console.log('invalid credentials')
             return res.status(401).json({message:'Invalid credentials'})
 
         }
@@ -39,6 +40,8 @@ export const singin = async(req, res)=>{
         res.cookie('access_token', token, {httpOnly: true, expires: expiryDate})
         .status(200)
         .json(rest) // sending the user data without password to client
+
+        console.log('sign in success')
     } catch (error) {
         res.status(500).json({message:error.message})
     }
