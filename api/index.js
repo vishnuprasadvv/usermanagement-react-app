@@ -23,3 +23,7 @@ app.listen(3000, ()=>{
 //routes 
 app.use('/api/user' , userRoutes) 
 app.use('/api/auth' , authRoutes)
+
+app.use((error, req, res, next)=>{
+    
+})
