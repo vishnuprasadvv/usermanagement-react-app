@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 
 // Get the directory name of the current file
 const __dirname = dirname(__filename);
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')))
+
 
 import fs from 'fs'; 
 

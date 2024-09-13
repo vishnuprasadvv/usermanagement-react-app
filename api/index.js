@@ -21,12 +21,12 @@ mongoose.connect(process.env.MONGO_URI).then(()=>{
 const app = express();
 
 
-// // Get the full path of the current file
-// const __filename = fileURLToPath(import.meta.url);
+// Get the full path of the current file
+const __filename = fileURLToPath(import.meta.url);
 
-// // Get the directory name of the current file
-// const __dirname = dirname(__filename);
-// app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
+// Get the directory name of the current file
+const __dirname = dirname(__filename);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 
 
